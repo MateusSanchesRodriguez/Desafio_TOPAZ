@@ -1,18 +1,13 @@
 import requests
 
 
-
-token = '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'
-
 def get_user_data(username):
-    headers = {'Authorization': f'token {token}'}
-    response = requests.get(f"https://api.github.com/users/{username}", headers=headers)
+    response = requests.get(f"https://api.github.com/users/{username}")
     user_data = response.json()
     return user_data
 
 def get_user_repositories(username):
-    headers = {'Authorization': f'token {token}'}
-    response = requests.get(f"https://api.github.com/users/{username}/repos", headers=headers)
+    response = requests.get(f"https://api.github.com/users/{username}/repos")
     repositories = response.json()
     return repositories
 
